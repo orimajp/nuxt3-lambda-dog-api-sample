@@ -1,11 +1,16 @@
 <script setup lang="ts">
 const dogImageLink = ref('')
 const busy = ref(false)
+const { getBaseUrl } = useBaseUrl()
+const baseUrl = getBaseUrl()
 
 const { data: response, refresh } = await useFetch('/api/dog', {
-  initialCache: false,
+  baseURL: baseUrl,
 })
-dogImageLink.value = response.value.message
+
+if (response.value) {
+  dogImageLink.value = response.value.message
+}
 
 const reload = async () => {
   busy.value = true
