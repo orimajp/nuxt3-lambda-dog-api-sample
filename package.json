@@ -8,6 +8,6 @@
   },
   "devDependencies": {
     "@picocss/pico": "^1.5.3",
-    "nuxt": "3.0.0-rc.6"
+    "nuxt": "^3.0.0-rc.7"
   }
 }

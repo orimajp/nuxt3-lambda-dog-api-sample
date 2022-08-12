@@ -8,9 +8,7 @@ const { data: response, refresh } = await useFetch('/api/dog', {
   baseURL: baseUrl,
 })
 
-if (response.value) {
-  dogImageLink.value = response.value.message
-}
+dogImageLink.value = response.value.message
 
 const reload = async () => {
   busy.value = true
